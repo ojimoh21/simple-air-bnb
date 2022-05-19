@@ -1,3 +1,33 @@
 <div class='container'>
-  <H1></H1>
+  <h3 class='mt-5'><%= @house.name %></h3>
+  <h6><%= @house.address %></h6>
+
+  <h4><%= @house.name %> hosted by Laura</h4>
+  <div class='features'>
+    <p><%= @house.guests %> guests. <%= @house.bedrooms %> bedrooms. <%= @house.beds %> beds .<%= @house.bathrooms %> bathrooms</p>
+  </div>
+  <hr>
+  <div class='house-description'>
+    <p><%= @house.description %></p>
+  </div>
+  <hr>
+  <div class='Amenties'>
+    <h4>What this place offers</h4>
+    <div class="amenties-list d-flex">
+      <ul>
+        <li><i class="fa-solid fa-umbrella-beach"></i> Public or shared beach access</li>
+        <li><i class="fa-solid fa-kitchen-set"></i> Kitchen</li>
+        <li><i class="fa-solid fa-wifi"></i> Wifi</li>
+        <li><i class="fa-solid fa-car"></i> Free driveway parking on premises</li>
+        <li><i class="fa-solid fa-paw-simple"></i> Pets allowed</li>
+      </ul>
+      <ul>
+        <li><i class="fa-solid fa-tv"></i> TV</li>
+        <li><i class="fa-solid fa-washing-machine"></i> Washing machine</li>
+        <li><i class="fa-solid fa-dryer"></i> Dryer</li>
+        <li><i class="fa-solid fa-air-conditioner"></i> Air conditioning</li>
+        <li><i class="fa-solid fa-sensor-cloud"></i> Carbon monoxide alarm</li>
+      </ul>
+    </div>
+  </div>
 </div>

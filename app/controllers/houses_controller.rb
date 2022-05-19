@@ -1,8 +1,8 @@
 class HousesController < ApplicationController
-  before_action :house_params, only: [:edit, :update]
+  before_action :find_house, only: [:show, :edit, :update]
 
   def index
-    @house = House.all
+    @houses = House.all
   end
 
   def show; end
@@ -37,6 +37,6 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :prices, :name)
+    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :price, :name)
   end
 end

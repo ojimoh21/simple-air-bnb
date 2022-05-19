@@ -1,0 +1,47 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 16px;
+  padding: 0 16px;
+  flex-grow: 1;
+}
+
+.house-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+
+}
+
+.house-img {
+  border-radius: 10px;
+}
+
+.house-link {
+  color: black;
+  text-decoration: none;
+}
+
+.house-link:hover {
+  color: black;
+}
+@media (max-width: 1200px) {
+  .cards-container {
+      grid-template-columns: auto auto auto;
+    }
+}
+@media (max-width:992px) {
+  .cards-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: auto;
+  }
+  .house-card {
+    margin: auto;
+  }
+}
