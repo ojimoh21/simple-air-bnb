@@ -19,15 +19,21 @@
         <li><i class="fa-solid fa-kitchen-set"></i> Kitchen</li>
         <li><i class="fa-solid fa-wifi"></i> Wifi</li>
         <li><i class="fa-solid fa-car"></i> Free driveway parking on premises</li>
-        <li><i class="fa-solid fa-paw-simple"></i> Pets allowed</li>
+        <li><i class="fa-solid fa-paw"></i> Pets allowed</li>
       </ul>
       <ul>
         <li><i class="fa-solid fa-tv"></i> TV</li>
-        <li><i class="fa-solid fa-washing-machine"></i> Washing machine</li>
-        <li><i class="fa-solid fa-dryer"></i> Dryer</li>
-        <li><i class="fa-solid fa-air-conditioner"></i> Air conditioning</li>
-        <li><i class="fa-solid fa-sensor-cloud"></i> Carbon monoxide alarm</li>
+        <li><i class="fa-solid fa-square-caret-down"></i> Washing machine</li>
+        <li><i class="fa-solid fa-square-caret-down"></i> Dryer</li>
+        <li><i class="fa-solid fa-square-caret-down"></i></i> Air conditioning</li>
+        <li><i class="fa-solid fa-square-caret-down"></i> Carbon monoxide alarm</li>
       </ul>
     </div>
   </div>
+  <hr>
+  <div style="width: 75%; height: 400px;"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  class='map'></div>
 </div>

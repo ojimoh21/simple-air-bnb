@@ -5,7 +5,10 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
-  def show; end
+  def show
+    house = @house.geocode
+    @marker = [{ lat: house[0], lng: house[1] }]
+  end
 
   def new
     @house = House.new
