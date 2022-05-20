@@ -21,11 +21,11 @@
 .house-link {
   color: black;
   text-decoration: none;
+  &:hover {
+    color:black
+  }
 }
 
-.house-link:hover {
-  color: black;
-}
 @media (max-width: 1200px) {
   .cards-container {
       grid-template-columns: auto auto auto;

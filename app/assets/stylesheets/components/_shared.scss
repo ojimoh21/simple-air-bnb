@@ -1,0 +1,23 @@
+.logo {
+  color: rgb(255, 81, 0);
+  text-decoration: none;
+  &:hover {
+    color: rgb(255, 81, 0);
+  }
+}
+
+.new {
+  margin-left: 50rem;
+  color: black;
+  border-radius: 12px;
+  &:hover {
+    background-color: lightgray;
+    border-radius: 12px;
+    color: black;
+  }
+  &:after {
+    background-color: lightgray;
+      border-radius: 12px;
+      color: black;
+  }
+}
