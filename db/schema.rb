@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_190035) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_19_164237) do
   create_table "add_name_and_host_to_houses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,4 +30,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_190035) do
     t.string "host"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "context"
+    t.integer "house_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["house_id"], name: "index_reviews_on_house_id"
+  end
+
+  add_foreign_key "reviews", "houses"
 end
