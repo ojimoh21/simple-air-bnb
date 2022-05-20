@@ -8,6 +8,9 @@ class HousesController < ApplicationController
   def show
     house = @house.geocode
     @marker = [{ lat: house[0], lng: house[1] }]
+    @first_pic = @house.photos.first
+    @second_set = @house.photos[1, 2]
+    @third_set = @house.photos[3, 4]
   end
 
   def new
@@ -40,6 +43,6 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :price, :name)
+    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :price, :name, photos: [])
   end
 end

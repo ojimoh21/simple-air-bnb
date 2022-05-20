@@ -1,7 +1,21 @@
 <div class='container'>
   <h3 class='mt-5'><%= @house.name %></h3>
   <h6><%= @house.address %></h6>
-
+  <div class='d-flex justify-content-evenly mb-3'>
+    <div >
+      <%= cl_image_tag @first_pic.key, height: 380, width: 560, crop: :fill, class: 'house-img'%>
+    </div>
+    <div class='second'>
+      <% @second_set.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 186, width: 300, crop: :fill, class: 'mb-2 house-img' %>
+      <% end %>
+    </div>
+    <div class='third'>
+      <% @third_set.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 186, width: 300, crop: :fill, class: 'mb-2 house-img' %>
+      <% end %>
+    </div>
+  </div>
   <h4><%= @house.name %> hosted by Laura</h4>
   <div class='features'>
     <p><%= @house.guests %> guests. <%= @house.bedrooms %> bedrooms. <%= @house.beds %> beds .<%= @house.bathrooms %> bathrooms</p>

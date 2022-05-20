@@ -7,5 +7,6 @@
   <%= f.input :beds, as: :integer, input_html: { min: '0', step: 'any' }%>
   <%= f.input :bathrooms, as: :integer, input_html: { min: '0', step: 'any' }%>
   <%= f.input :price, as: :float%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Save Home!"%>
 <% end %>
