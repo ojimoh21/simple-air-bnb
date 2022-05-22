@@ -3,6 +3,12 @@ class HousesController < ApplicationController
 
   def index
     @houses = House.all
+    @markers = @houses.geocoded.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude
+      }
+    end
   end
 
   def show

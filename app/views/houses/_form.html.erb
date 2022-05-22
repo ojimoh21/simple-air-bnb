@@ -1,6 +1,6 @@
 <%= simple_form_for(@house) do |f| %>
   <%= f.input :name %>
-  <%= f.input :address%>
+  <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :guests, as: :integer, input_html: { min: '0', step: 'any' }%>
   <%= f.input :bedrooms, as: :integer, input_html: { min: '0', step: 'any' }%>

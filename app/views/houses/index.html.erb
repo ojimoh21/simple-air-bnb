@@ -1,17 +1,29 @@
 <div class="container">
   <h1 class="mt-5">Homes for renting</h1>
-  <div class="cards-container mt-5">
-    <% @houses.each do |house| %>
-      <%= link_to house_path(house), class: 'house-link' do %>
-        <div class="card house-card" style="width: 18rem;">
-          <img src="https://source.unsplash.com/random" class="card-img-top house-img" style='height:15rem'>
-          <div class="card-body">
-            <h5 class="card-title"><%= house.address %></h5>
-            <p class="card-text">Hosted By Laura</p>
-            <p class='card-text'><u><strong>£<%= house.price %></strong> total</p></u>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+  <div class='d-flex'>
+      <div class="cards-container mt-5">
+        <% @houses.each do |house| %>
+          <%= link_to house_path(house), class: 'house-link' do %>
+            <div class="card house-card" style="width: 18rem;">
+              <% if house.photos.attached? %>
+                <%= cl_image_tag house.photos.first.key, height: 270, width: 324, crop: :fill, class: 'card-img-top house-img'%>
+              <% else %>
+                <img src="https://source.unsplash.com/random" class="card-img-top house-img" style='height:15rem'>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= house.address %></h5>
+                <p class="card-text">Hosted By Laura</p>
+                <p class='card-text'><u><strong>£<%= house.price %></strong> total</p></u>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div style="width: 45%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        class='map'>
+      </div>
   </div>
 </div>
