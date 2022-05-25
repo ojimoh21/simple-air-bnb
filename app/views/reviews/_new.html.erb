@@ -1,0 +1,8 @@
+<div class='container'>
+  <h1>Leave a Review</h1>
+  <%= simple_form_for([@house, @review]) do |f| %>
+  <%= f.input :rating, as: :integer, input_html: { min: '0', max: '5',step: 'any' }%>
+  <%= f.input :context %>
+  <%= f.submit "Submit review" %>
+  <% end %>
+</div>

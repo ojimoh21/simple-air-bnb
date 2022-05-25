@@ -26,6 +26,18 @@
   }
 }
 
+
+
+.review-card {
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        margin-top: 5px;
+}
+
 @media (max-width: 1200px) {
   .cards-container {
       grid-template-columns: auto auto auto;

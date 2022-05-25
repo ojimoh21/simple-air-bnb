@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class HousesController < ApplicationController
-  before_action :find_house, only: [:show, :edit, :update]
+  before_action :find_house, only: %i[show edit update]
 
   def index
     @houses = House.all
@@ -17,6 +19,8 @@ class HousesController < ApplicationController
     @first_pic = @house.photos.first
     @second_set = @house.photos[1, 2]
     @third_set = @house.photos[3, 4]
+    @review = Review.new
+    @rating = @house.reviews.average(:rating).round(2)
   end
 
   def new
@@ -49,6 +53,7 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :price, :name, photos: [])
+    params.require(:house).permit(:address, :description, :guests, :beds, :bathrooms, :bedrooms, :price, :name,
+                                  photos: [])
   end
 end

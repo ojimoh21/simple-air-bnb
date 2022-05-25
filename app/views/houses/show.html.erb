@@ -45,6 +45,43 @@
     </div>
   </div>
   <hr>
+  <div>
+    <%= render '/reviews/new' %>
+  </div>
+    <% unless @house.reviews.empty?%>
+    <hr>
+    <div class='container'>
+      <h3>Reviews</h3>
+      <h4><%= @rating %> <i class="fa-solid fa-star"></i></h4>
+      <div class='d-flex flex-row'>
+      <div class='m-2'>
+      <% @house.reviews.first(5).each do |review| %>
+          <div class='review-card d-flex justify-content-evenly'>
+            <div class="card-body" style="width: 70%; height: 75px;">
+              <%= review.context %>
+            </div>
+            <div class="card-body">
+              <%= review.rating %> <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+      <% end %>
+      </div>
+      <div class='m-2'>
+      <% @house.reviews.last(5).each do |review| %>
+        <div class='review-card d-flex justify-content-evenly'>
+          <div class="card-body" style="width: 70%; height: 75px;">
+            <%= review.context %>
+          </div>
+          <div class="card-body">
+            <%= review.rating %> <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <hr>
   <div style="width: 75%; height: 400px;"
   data-controller="map"
   data-map-markers-value="<%= @marker.to_json %>"

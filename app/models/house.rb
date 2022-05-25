@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class House < ApplicationRecord
   has_many :reviews
   validates :description, :beds, :bathrooms, :guests, presence: true
